@@ -1,7 +1,19 @@
 <?php
-// Think of this page as a "controller", this is where all your PHP logic will go.
-// Here you will require anything necessary to your files "Config, functions etc."
-// Your PHP logic will go here
+ $page['name'] = !empty($_GET['page']) ? $_GET['page'] : '';
 
-// After PHP logic you will require your view you want to show
-require 'views/index.view.php';
+ switch ($page['name']) {
+ 	case 'home':
+ 	require 'home.php';
+ 	break;
+
+ 	case 'about':
+ 	require 'about.php';
+ 	break;
+
+ 	case 'contact':
+ 	require 'contact.php';
+ 	break;
+
+ 	default:
+ 	require 'home.php';
+ }
